@@ -1,7 +1,12 @@
 use std::io;
 
-struct player{
+struct player {
   name: String,
   health: i8, 
   xp: i8,
+}
+
+impl player {
+
+
 }
