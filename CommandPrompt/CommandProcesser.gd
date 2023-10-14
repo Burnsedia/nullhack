@@ -21,4 +21,25 @@ func process_command(input:String):
 	
 	var first_word = words[0].to_lower()
 	var second_word = " "
-:wq
+	
+	if words.size() > 1:
+		second_word = words[1].to_lower()
+	match first_word:
+		"go":
+			return go(second_word)
+		"map":
+			return map(second_word)
+		_:
+			return "Unreconized Command"
+		
+func go(dir:String) -> String:
+	if dir == " ":
+		return "Go where?"
+		
+	return "You went %s" % dir
+	
+func map(local:String) -> String:
+	return "You located at unkown %s" % local
+	
+	
+	

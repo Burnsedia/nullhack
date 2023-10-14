@@ -11,6 +11,7 @@ export(int) var max_lines_saved := 32
 
 var max_scroll_length := 0
 
+onready var command_processer = $CommandProcesser
 onready var history_rows = $"Panel/MarginContainer/Rows/GameInfo/ScrollContainer/HistoryRows"
 onready var scroll = $"Panel/MarginContainer/Rows/GameInfo/ScrollContainer"
 onready var scrollbar = scroll.get_v_scrollbar()
@@ -33,8 +34,9 @@ func scrollbar_changed():
 func _on_LineEdit_text_entered(new_text):
 	if new_text.empty():
 		return
+	var response = command_processer.process_command(new_text)
 	var input_response = InputResponse.instance()
-	input_response.set_text(new_text, "Test test")
+	input_response.set_text(new_text, response)
 	if history_rows.get_child_count() > max_lines_saved:
 		var rows_to_ignor = history_rows.get_child_count() - max_lines_saved
 		for _i in range(rows_to_ignor):

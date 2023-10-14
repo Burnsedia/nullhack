@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Empire" type="Node"]
+
+[node name="Fleet" type="Node" parent="."]
+
+[node name="Econemy" type="Node" parent="."]
+
+[node name="Populations" type="Node" parent="."]
+
+[node name="Stations" type="Node" parent="."]
+
+[node name="Systems" type="Node" parent="."]

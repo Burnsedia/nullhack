@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://CommandPrompt/CommandProcesser.gd" type="Script" id=1]
 [ext_resource path="res://TineralTheme.tres" type="StyleBox" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://IBMPlexMono-Italic.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://CommandPrompt/input.gd" type="Script" id=5]
+[ext_resource path="res://Map/GalaxyMapManger.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 4 )
@@ -86,6 +87,9 @@ script = ExtResource( 5 )
 
 [node name="CommandProcesser" type="Node" parent="."]
 script = ExtResource( 1 )
+
+[node name="GalaxyMapManger" type="Node" parent="."]
+script = ExtResource( 6 )
 
 [connection signal="text_entered" from="Panel/MarginContainer/Rows/InputArea/HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="text_entered" from="Panel/MarginContainer/Rows/InputArea/HBoxContainer/LineEdit" to="Panel/MarginContainer/Rows/InputArea/HBoxContainer/LineEdit" method="_on_LineEdit_text_entered"]
